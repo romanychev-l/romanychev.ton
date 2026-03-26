@@ -48,7 +48,7 @@ export const SITE: Site = {
     text: "",
     url: "",
   },
-  dynamicOgImage: false,
+  dynamicOgImage: !import.meta.env.DISABLE_OG,
   lang: "en",
   timezone: "Europe/Moscow",
 };

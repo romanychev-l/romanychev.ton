@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build && pagefind --site dist",
+    "build:light": "DISABLE_OG=true astro build && pagefind --site dist",
     "build:check": "astro check && astro build && pagefind --site dist",
     "preview": "astro preview",
     "astro": "astro",
