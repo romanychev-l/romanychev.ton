@@ -13,7 +13,7 @@ export interface Props extends CollectionEntry<"blog"> {
 
 const { variant = "h2", data, id, filePath, body, showImage = true } = Astro.props;
 
-const { title, description, pubDatetime, modDatetime, timezone, heroImage } = data;
+const { title, titleRu, description, descriptionRu, pubDatetime, modDatetime, timezone, heroImage } = data;
 const readingTime = calculateReadingTime(body ?? "");
 
 const headerProps = {
@@ -28,13 +28,27 @@ const headerProps = {
       href={getPath(id, filePath)}
       class="inline-block text-lg font-medium text-accent decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0"
     >
-      {
+      {titleRu ? (
+        <>
+          {variant === "h2" ? (
+            <>
+              <h2 {...headerProps} data-i18n-block="en">{title}</h2>
+              <h2 {...{...headerProps, style: {}}} data-i18n-block="ru" style="display:none">{titleRu}</h2>
+            </>
+          ) : (
+            <>
+              <h3 {...headerProps} data-i18n-block="en">{title}</h3>
+              <h3 {...{...headerProps, style: {}}} data-i18n-block="ru" style="display:none">{titleRu}</h3>
+            </>
+          )}
+        </>
+      ) : (
         variant === "h2" ? (
           <h2 {...headerProps}>{title}</h2>
         ) : (
           <h3 {...headerProps}>{title}</h3>
         )
-      }
+      )}
     </a>
     <div class="flex items-center gap-3 mb-3">
       <Datetime {pubDatetime} {modDatetime} {timezone} />
@@ -59,7 +73,14 @@ const headerProps = {
           />
         </a>
       )}
-      <p class="opacity-80 flex-1">{description}</p>
+      {descriptionRu ? (
+        <>
+          <p class="opacity-80 flex-1" data-i18n-block="en">{description}</p>
+          <p class="opacity-80 flex-1" data-i18n-block="ru" style="display:none">{descriptionRu}</p>
+        </>
+      ) : (
+        <p class="opacity-80 flex-1">{description}</p>
+      )}
     </div>
   </div>
 </li>

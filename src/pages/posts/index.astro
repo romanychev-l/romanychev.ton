@@ -9,23 +9,18 @@ import getPostsByGroupCondition from "@/utils/getPostsByGroupCondition";
 
 const posts = await getCollection("blog", ({ data }) => !data.draft);
 
-const months = [
-  "Январь",
-  "Февраль",
-  "Март",
-  "Апрель",
-  "Май",
-  "Июнь",
-  "Июль",
-  "Август",
-  "Сентябрь",
-  "Октябрь",
-  "Ноябрь",
-  "Декабрь",
+const monthsRu = [
+  "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь",
+  "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь",
+];
+
+const monthsEn = [
+  "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December",
 ];
 ---
 
-<Layout title={`Posts | ${SITE.title}`} description="Архив всех записей блога.">
+<Layout title={`Posts | ${SITE.title}`} description="Archive of all blog posts.">
   <Header />
   <main id="main-content" class="mx-auto w-full max-w-3xl px-4 pb-4">
     <h1 class="text-2xl font-semibold sm:text-3xl mt-8" data-i18n-key="ui.allPosts">All Posts</h1>
@@ -54,7 +49,8 @@ const months = [
               .map(([month, monthGroup]) => (
                 <div class="mt-8">
                   <h3 class="text-xl font-bold mb-4">
-                    {months[Number(month) - 1]}
+                    <span data-i18n-block="en">{monthsEn[Number(month) - 1]}</span>
+                    <span data-i18n-block="ru" style="display:none">{monthsRu[Number(month) - 1]}</span>
                     <sup class="text-sm ml-1">{monthGroup.length}</sup>
                   </h3>
                   <ul>

@@ -25,6 +25,7 @@ const { post, posts } = Astro.props;
 
 const {
   title,
+  titleRu,
   author,
   description,
   ogImage: initOgImage,
@@ -116,12 +117,31 @@ const wordCount = (post.body ?? "").split(/\s+/).length;
     ]}
     data-pagefind-body
   >
-    <h1
-      transition:name={slugifyStr(title)}
-      class="inline-block text-2xl font-bold text-accent sm:text-3xl"
-    >
-      {title}
-    </h1>
+    {titleRu ? (
+      <>
+        <h1
+          transition:name={slugifyStr(title)}
+          class="inline-block text-2xl font-bold text-accent sm:text-3xl"
+          data-i18n-block="en"
+        >
+          {title}
+        </h1>
+        <h1
+          class="inline-block text-2xl font-bold text-accent sm:text-3xl"
+          data-i18n-block="ru"
+          style="display:none"
+        >
+          {titleRu}
+        </h1>
+      </>
+    ) : (
+      <h1
+        transition:name={slugifyStr(title)}
+        class="inline-block text-2xl font-bold text-accent sm:text-3xl"
+      >
+        {title}
+      </h1>
+    )}
     <div class="flex items-center justify-between gap-4 mt-2 mb-6">
       <div class="flex items-center gap-3">
         <Datetime {pubDatetime} {modDatetime} {timezone} size="lg" />
