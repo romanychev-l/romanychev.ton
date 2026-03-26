@@ -35,7 +35,7 @@ export const SITE: Site = {
   author: "Леонид Романычев",
   profile: "https://romanychev.ton/about",
   desc: "Личный блог о технологиях, AI, блокчейне, приватности и разработке. Посты из Telegram-канала @daily_scrum.",
-  title: "romanychev",
+  title: "Leonid Romanychev",
   ogImage: "avatar.jpg",
   lightAndDarkMode: true,
   postPerIndex: 10,
