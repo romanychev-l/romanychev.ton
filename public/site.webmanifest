@@ -1,0 +1,16 @@
+{
+  "name": "romanychev",
+  "short_name": "romanychev",
+  "description": "Личный блог о технологиях, AI, блокчейне, приватности и разработке",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "16x16 32x32 48x48",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": "/",
+  "display": "browser",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff"
+}

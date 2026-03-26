@@ -1,0 +1,46 @@
+export const translations = {
+  ru: {
+    "nav.posts": "Записи",
+    "nav.about": "Обо мне",
+    "nav.search": "Поиск",
+    "nav.archives": "Архив",
+    "ui.featured": "Избранное",
+    "ui.recentPosts": "Последние записи",
+    "ui.allPosts": "Все записи",
+    "ui.backToTop": "Наверх",
+    "ui.previousPost": "Предыдущая запись",
+    "ui.nextPost": "Следующая запись",
+    "ui.tags": "Теги",
+    "ui.searchPlaceholder": "Поиск записей...",
+    "ui.noPostsFound": "Записи не найдены",
+    "ui.skipToContent": "Перейти к содержимому",
+    "ui.viewOnTelegram": "Читать в Telegram",
+    "ui.sharePost": "Поделиться:",
+    "hero.greeting": "Привет, я @romanychev.",
+    "hero.description": "Пишу о технологиях, AI, блокчейне, приватности и разработке.",
+  },
+  en: {
+    "nav.posts": "Posts",
+    "nav.about": "About",
+    "nav.search": "Search",
+    "nav.archives": "Archives",
+    "ui.featured": "Featured",
+    "ui.recentPosts": "Recent Posts",
+    "ui.allPosts": "All Posts",
+    "ui.backToTop": "Back to Top",
+    "ui.previousPost": "Previous Post",
+    "ui.nextPost": "Next Post",
+    "ui.tags": "Tags",
+    "ui.searchPlaceholder": "Search posts...",
+    "ui.noPostsFound": "No posts found",
+    "ui.skipToContent": "Skip to content",
+    "ui.viewOnTelegram": "View on Telegram",
+    "ui.sharePost": "Share:",
+    "hero.greeting": "Hi, I'm @romanychev.",
+    "hero.description": "Writing about tech, AI, blockchain, privacy and development.",
+  },
+} as const;
+
+export type Lang = keyof typeof translations;
+export const defaultLang: Lang = "ru";
+export const supportedLangs: Lang[] = ["ru", "en"];
