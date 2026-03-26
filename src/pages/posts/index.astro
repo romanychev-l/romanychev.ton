@@ -28,8 +28,8 @@ const months = [
 <Layout title={`Posts | ${SITE.title}`} description="Архив всех записей блога.">
   <Header />
   <main id="main-content" class="mx-auto w-full max-w-3xl px-4 pb-4">
-    <h1 class="text-2xl font-semibold sm:text-3xl mt-8" data-i18n-key="ui.allPosts">Все записи</h1>
-    <p class="mt-2 mb-6 italic" data-i18n-key="ui.browseByYear">Записи по годам и месяцам</p>
+    <h1 class="text-2xl font-semibold sm:text-3xl mt-8" data-i18n-key="ui.allPosts">All Posts</h1>
+    <p class="mt-2 mb-6 italic" data-i18n-key="ui.browseByYear">Browse all posts by year and month</p>
     {
       Object.entries(
         getPostsByGroupCondition(posts, (post) => {

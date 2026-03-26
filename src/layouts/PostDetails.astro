@@ -156,7 +156,7 @@ const wordCount = (post.body ?? "").split(/\s+/).length;
         return msgId ? (
           <div class="mt-6 text-sm">
             <a href={`https://t.me/daily_scrum/${msgId}`} target="_blank" rel="noopener noreferrer" class="text-accent hover:opacity-75" data-i18n-key="ui.viewOnTelegram">
-              Читать в Telegram
+              View on Telegram
             </a>
           </div>
         ) : null;
@@ -181,7 +181,7 @@ const wordCount = (post.body ?? "").split(/\s+/).length;
         class="focus-outline py-1 whitespace-nowrap hover:opacity-75"
       >
         <IconChevronLeft class="inline-block rotate-90" />
-        <span data-i18n-key="ui.backToTop">Наверх</span>
+        <span data-i18n-key="ui.backToTop">Back to Top</span>
       </button>
     </div>
 
@@ -203,7 +203,7 @@ const wordCount = (post.body ?? "").split(/\s+/).length;
           >
             <IconChevronLeft class="inline-block flex-shrink-0 mt-0.5" />
             <div class="min-w-0">
-              <span class="block text-sm text-foreground/70" data-i18n-key="ui.previousPost">Предыдущая запись</span>
+              <span class="block text-sm text-foreground/70" data-i18n-key="ui.previousPost">Previous Post</span>
               <div class="text-accent/85">{prevPost.title}</div>
             </div>
           </a>
@@ -217,7 +217,7 @@ const wordCount = (post.body ?? "").split(/\s+/).length;
             id="next-post-link"
           >
             <div class="min-w-0">
-              <span class="block text-sm text-foreground/70" data-i18n-key="ui.nextPost">Следующая запись</span>
+              <span class="block text-sm text-foreground/70" data-i18n-key="ui.nextPost">Next Post</span>
               <div class="text-accent/85">{nextPost.title}</div>
             </div>
             <IconChevronRight class="inline-block flex-shrink-0 mt-0.5" />

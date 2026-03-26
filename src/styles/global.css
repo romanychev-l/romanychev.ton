@@ -52,6 +52,12 @@ html[data-theme="dark"] {
     scrollbar-width: auto;
     scrollbar-color: var(--color-muted) transparent;
   }
+
+  body {
+    overflow-x: hidden;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
   
   /* View Transitions API for smooth theme switching (Safari 18+, Chrome 111+) */
   :root {

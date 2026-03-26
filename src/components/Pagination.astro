@@ -22,7 +22,7 @@ const { page } = Astro.props;
         ariaLabel="Previous"
       >
         <IconArrowLeft class="inline-block" />
-        <span data-i18n-key="ui.prev">Назад</span>
+        <span data-i18n-key="ui.prev">Prev</span>
       </LinkButton>
       {page.currentPage} / {page.lastPage}
       <LinkButton
@@ -31,7 +31,7 @@ const { page } = Astro.props;
         class:list={["ml-4 select-none", { "opacity-50": !page.url.next }]}
         ariaLabel="Next"
       >
-        <span data-i18n-key="ui.next">Вперёд</span>
+        <span data-i18n-key="ui.next">Next</span>
         <IconArrowRight class="inline-block" />
       </LinkButton>
     </nav>

@@ -49,7 +49,7 @@ export const SITE: Site = {
     url: "",
   },
   dynamicOgImage: true,
-  lang: "ru",
+  lang: "en",
   timezone: "Europe/Moscow",
 };
 

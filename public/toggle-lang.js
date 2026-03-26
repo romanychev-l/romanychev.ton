@@ -65,9 +65,9 @@
 
   function getLang() {
     try {
-      return localStorage.getItem("lang") || "ru";
+      return localStorage.getItem("lang") || "en";
     } catch (e) {
-      return "ru";
+      return "en";
     }
   }
 
