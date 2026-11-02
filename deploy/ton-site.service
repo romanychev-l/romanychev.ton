@@ -1,0 +1,33 @@
+[Unit]
+Description=romanychev.ton TON reverse proxy
+Wants=network-online.target
+After=network-online.target nginx.service
+
+[Service]
+Type=simple
+User=ton-site
+Group=ton-site
+StateDirectory=ton-site
+StateDirectoryMode=0700
+WorkingDirectory=/var/lib/ton-site
+Environment=EXTERNAL_IP=129.101.126.88
+Environment=LISTEN_IP=0.0.0.0
+Environment=LISTEN_PORT=3333
+Environment=PROXY_PASS=http://127.0.0.1:8080/
+ExecStart=/usr/local/bin/tonutils-reverse-proxy --max-concurrent-requests 256
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=20
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX AF_NETLINK
+MemoryMax=256M
+
+[Install]
+WantedBy=multi-user.target

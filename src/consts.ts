@@ -31,9 +31,9 @@ interface Site {
 
 // Site configuration
 export const SITE: Site = {
-  website: "https://romanychev.ton/",
+  website: "http://romanychev.ton/",
   author: "Леонид Романычев",
-  profile: "https://romanychev.ton/about",
+  profile: "http://romanychev.ton/about",
   desc: "Личный блог о технологиях, AI, блокчейне, приватности и разработке. Посты из Telegram-канала @daily_scrum.",
   title: "Leonid Romanychev",
   ogImage: "avatar.jpg",
